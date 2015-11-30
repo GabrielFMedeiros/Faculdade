@@ -1,0 +1,24 @@
+#include <stdio.h>
+ 
+main(){
+    int N=0,X=0,I=0,CONTROLE=0,CONT;
+    scanf("%d",&N);
+    for(CONT=1;CONT<=N;CONT++){ //for para contar a quantidade de testes.
+    scanf("%d",&X);
+    if (X>1){ // verificar se o numero é maior que 1, pois 1 não é primo    
+        for (I=1;I<=X;I++){ //dividir o numero pelos numeros que estão entre ele e 1
+            if (X%I==0){ //se for divisivel por um numero sem sobrar resto, coloquei a variavel controle pra contar os divisores
+            CONTROLE++;
+            }
+        }
+        if (CONTROLE==2){ //se a variavel controle for 2 isso quer dizer que o numero é primo
+           printf("%d eh primo\n",X);             
+        }
+        else{
+            printf("%d nao eh primo\n",X);    
+        }
+    }
+    CONTROLE=0;
+    }
+    return 0; 
+}
